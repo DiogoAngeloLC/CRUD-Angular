@@ -40,19 +40,11 @@ export class LoginComponent {
       .subscribe(
         (response: any) => {
           const accessToken = response.access_token;
+          this.router.navigate(['/home']);
         },
         (error) => {
           console.error('Erro de autenticação:', error);
         }
       );
-
-    if (this.username === 'admin' && this.password === 'admin') {
-      console.log(
-        'Autenticação bem-sucedida! Redirecionando para a página principal...'
-      );
-      this.router.navigate(['/home']);
-    } else {
-      console.log('Falha na autenticação! Verifique suas credenciais.');
-    }
   }
 }
