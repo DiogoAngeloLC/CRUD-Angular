@@ -1,0 +1,137 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.alinhar {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  width: 80%;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li:hover {
+  background-color: #eceaea;
+}
+
+li .banco-icon {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+li .banco-nome {
+  font-weight: bold;
+}
+
+li .banco-id,
+li .banco-status,
+li .banco-codigo {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.botoes {
+  margin-bottom: 20px;
+}
+
+.botao-novo {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.botao-excluir {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.banco-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.banco-info {
+  flex-grow: 1;
+}
+
+.banco-id,
+.banco-status,
+.banco-codigo,
+.banco-descricao {
+  margin-right: 10px;
+}
+
+.banco-buttons {
+  display: flex;
+}
+
+.btn-editar,
+.btn-excluir {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.vermelho {
+  color: #dc3545;
+}
+
+.vermelho:hover {
+  color: #c82333;
+}
+
+.verde {
+  color: #259625;
+}
+
+.verde:hover {
+  color: #1e791e;
+}
+
+.banco-id,
+.banco-status,
+.banco-codigo,
+.banco-descricao {
+  margin-right: 10px;
+}

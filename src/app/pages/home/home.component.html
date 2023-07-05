@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="container">
+    <app-sidebar
+      (bancosClicked)="exibirBancos()"
+      (homeClicked)="ocultarBancos()"
+    ></app-sidebar>
+    <div class="content">
+      <ng-container *ngIf="!mostrarBancos && !novoBanco && !editarBanco">
+        <h2>Home</h2>
+      </ng-container>
+      <ng-container *ngIf="mostrarBancos">
+        <h3>Listagem de Bancos:</h3>
+        <div class="botoes">
+          <button class="botao-novo" (click)="exibirFormularioNovoBanco()">
+            NOVO
+          </button>
+        </div>
+        <ul>
+          <li *ngFor="let banco of bancos">
+            <div class="alinhar">
+              <i class="banco-icon material-icons">account_balance</i>
+              <span class="banco-nome">{{ banco.descricao }}</span>
+            </div>
+            <span class="banco-id">ID: {{ banco.id }}</span>
+            <span class="banco-status">Status: {{ banco.status }}</span>
+            <span class="banco-codigo">Código: {{ banco.codigo }}</span>
+            <div class="banco-buttons">
+              <button
+                class="btn-editar verde"
+                (click)="exibirFormularioEditarBanco(banco)"
+              >
+                <span class="material-icons">edit</span>
+              </button>
+              <button
+                class="btn-excluir vermelho"
+                (click)="excluirBanco(banco)"
+              >
+                <span class="material-icons">delete</span>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </ng-container>
+      <ng-container *ngIf="novoBanco">
+        <app-novo-banco
+          (novoBancoAdicionado)="adicionarNovoBanco($event)"
+          (cancelarBanco)="exibirBancos()"
+        ></app-novo-banco>
+      </ng-container>
+      <ng-container *ngIf="editarBanco">
+        <app-editar-banco
+          [banco]="bancoSelecionado"
+          (atualizarBanco)="atualizarBanco($event)"
+          (cancelarBanco)="exibirBancos()"
+        ></app-editar-banco>
+      </ng-container>
+    </div>
+  </div>
+</div>
