@@ -8,4 +8,4 @@ Digite `ng serve` no prompt para rodar a aplicação localmente. Acesse ela em `
 
 ## Login
 
-Para logar na aplicação, utilize o usuário 'admin' e senha 'admin'
+Para logar na aplicação, utilize o usuário 'admin' e senha 'admin'.
