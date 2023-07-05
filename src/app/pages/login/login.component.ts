@@ -40,6 +40,7 @@ export class LoginComponent {
       .subscribe(
         (response: any) => {
           const accessToken = response.access_token;
+          localStorage.setItem('accessToken', accessToken);
           this.router.navigate(['/home']);
         },
         (error) => {

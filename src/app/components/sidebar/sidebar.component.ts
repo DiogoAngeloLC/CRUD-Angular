@@ -21,6 +21,7 @@ export class SidebarComponent {
   }
 
   logoff() {
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 }

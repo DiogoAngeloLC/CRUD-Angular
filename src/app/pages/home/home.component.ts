@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BancoService, Banco } from 'src/app/services/banco.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -14,9 +15,31 @@ export class HomeComponent {
   bancoSelecionado: any = null;
   verificarService = false;
 
-  constructor(private bancoService: BancoService) {}
+  constructor(
+    private bancoService: BancoService,
+    private authService: AuthService
+  ) {}
+
+  async verificarToken() {
+    const accessToken = localStorage.getItem('accessToken');
+
+    if (accessToken) {
+      const tokenValido = await this.authService.verificarTokenValido(
+        accessToken
+      );
+
+      if (tokenValido) {
+        console.log('Token válido');
+      } else {
+        console.log('Token inválido');
+      }
+    } else {
+      console.log('Token não encontrado');
+    }
+  }
 
   adicionarNovoBanco(novoBanco: Banco) {
+    this.verificarToken();
     this.bancos.push(novoBanco);
     this.mostrarBancos = true;
     this.novoBanco = false;
@@ -24,6 +47,7 @@ export class HomeComponent {
   }
 
   atualizarBanco(bancoAtualizado: any) {
+    this.verificarToken();
     const index = this.bancos.findIndex(
       (banco: any) => banco.id === bancoAtualizado.id
     );
@@ -35,6 +59,7 @@ export class HomeComponent {
   }
 
   exibirBancos() {
+    this.verificarToken();
     if (this.verificarService == false) {
       this.bancos = this.bancoService.getBancos();
     }
@@ -51,12 +76,14 @@ export class HomeComponent {
   }
 
   exibirFormularioNovoBanco() {
+    this.verificarToken();
     this.mostrarBancos = false;
     this.editarBanco = false;
     this.novoBanco = true;
   }
 
   exibirFormularioEditarBanco(banco: Banco) {
+    this.verificarToken();
     this.bancoSelecionado = banco;
     this.mostrarBancos = false;
     this.novoBanco = false;
@@ -64,6 +91,7 @@ export class HomeComponent {
   }
 
   excluirBanco(banco: any) {
+    this.verificarToken();
     const confirmacao = window.confirm(
       'Tem certeza que deseja excluir o banco?'
     );
