@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NovoBancoComponent } from './components/novo-banco/novo-banco.component';
 import { EditarBancoComponent } from './components/editar-banco/editar-banco.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditarBancoComponent } from './components/editar-banco/editar-banco.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
