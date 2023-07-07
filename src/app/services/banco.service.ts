@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BancoService {
   getBancos(): Banco[] {
@@ -9,7 +9,7 @@ export class BancoService {
     return [
       { id: 1, status: 'Ativo', codigo: '001', descricao: 'Banco A' },
       { id: 2, status: 'Inativo', codigo: '002', descricao: 'Banco B' },
-      { id: 3, status: 'Ativo', codigo: '003', descricao: 'Banco C' }
+      { id: 3, status: 'Ativo', codigo: '003', descricao: 'Banco C' },
     ];
   }
 }
