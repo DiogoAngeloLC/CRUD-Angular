@@ -8,7 +8,7 @@ describe('NovoBancoComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NovoBancoComponent]
+      declarations: [NovoBancoComponent],
     });
     fixture = TestBed.createComponent(NovoBancoComponent);
     component = fixture.componentInstance;

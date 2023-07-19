@@ -2,11 +2,23 @@
 <form class="novo-banco-form">
   <div class="form-group">
     <label for="codigo">Código:</label>
-    <input type="number" id="codigo" name="codigo" [(ngModel)]="codigo" required>
+    <input
+      type="number"
+      id="codigo"
+      name="codigo"
+      [(ngModel)]="codigo"
+      required
+    />
   </div>
   <div class="form-group">
     <label for="descricao">Descrição:</label>
-    <input type="text" id="descricao" name="descricao" [(ngModel)]="descricao" required>
+    <input
+      type="text"
+      id="descricao"
+      name="descricao"
+      [(ngModel)]="descricao"
+      required
+    />
   </div>
   <div class="form-group">
     <label for="status">Status:</label>
@@ -16,7 +28,11 @@
     </select>
   </div>
   <div class="form-actions">
-    <button type="submit" class="btn-salvar" (click)="salvarBanco()">Salvar</button>
-    <button type="button" class="btn-cancelar" (click)="cancelarCadastro()">Cancelar</button>
+    <button type="submit" class="btn-salvar" (click)="salvarBanco()">
+      Salvar
+    </button>
+    <button type="button" class="btn-cancelar" (click)="cancelarCadastro()">
+      Cancelar
+    </button>
   </div>
 </form>

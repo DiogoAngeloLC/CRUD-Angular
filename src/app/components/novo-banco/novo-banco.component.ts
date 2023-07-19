@@ -3,7 +3,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-novo-banco',
   templateUrl: './novo-banco.component.html',
-  styleUrls: ['./novo-banco.component.css']
+  styleUrls: ['./novo-banco.component.css'],
 })
 export class NovoBancoComponent {
   codigo!: number;
@@ -18,7 +18,7 @@ export class NovoBancoComponent {
       id: this.gerarIdUnico(),
       codigo: this.codigo,
       descricao: this.descricao,
-      status: this.status
+      status: this.status,
     };
 
     this.novoBancoAdicionado.emit(novoBanco);
